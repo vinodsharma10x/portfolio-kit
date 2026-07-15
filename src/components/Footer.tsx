@@ -33,7 +33,7 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-gray-200 bg-gray-50">
+    <footer className="border-t border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-gray-950">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-6 flex flex-wrap items-center justify-between gap-x-6 gap-y-4">
         {/* Wordmark */}
         <Link
@@ -44,13 +44,13 @@ export function Footer() {
           <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-500 text-white text-xs font-bold">
             {INITIALS}
           </span>
-          <span className="text-base font-extrabold tracking-tight text-gray-900">
+          <span className="text-base font-extrabold tracking-tight text-gray-900 dark:text-gray-100">
             {BRAND_NAME}
           </span>
         </Link>
 
         {/* Center: social icons + legal links */}
-        <nav className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-gray-400">
+        <nav className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-gray-400 dark:text-gray-500">
           {socials.map((s) => (
             <a
               key={s.label}
@@ -58,19 +58,19 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={s.label}
-              className="hover:text-gray-700 transition-colors"
+              className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors"
             >
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path d={s.path} />
               </svg>
             </a>
           ))}
-          <span className="text-gray-200">|</span>
+          <span className="text-gray-200 dark:text-gray-700">|</span>
           {legal.map((l) => (
             <Link
               key={l.label}
               href={l.href}
-              className="hover:text-gray-700 transition-colors"
+              className="hover:text-gray-700 dark:hover:text-gray-200 transition-colors"
             >
               {l.label}
             </Link>
@@ -78,13 +78,13 @@ export function Footer() {
         </nav>
 
         {/* Copyright + backlink */}
-        <p className="text-sm text-gray-400">
+        <p className="text-sm text-gray-400 dark:text-gray-500">
           &copy; {year} {BRAND_NAME} &middot; Built with{" "}
           <a
             href="https://careerleap.app"
             target="_blank"
             rel="noopener"
-            className="text-gray-500 hover:text-brand-600 underline underline-offset-2 transition-colors"
+            className="text-gray-500 hover:text-brand-600 dark:text-gray-400 dark:hover:text-brand-400 underline underline-offset-2 transition-colors"
           >
             Portfolio Kit
           </a>

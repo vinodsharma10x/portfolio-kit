@@ -3,6 +3,7 @@ import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/react";
+import { ThemeProvider } from "next-themes";
 import Script from "next/script";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://example.com";
@@ -61,7 +62,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         {/* TODO: replace with your own Bing Webmaster verification code */}
         {/* <meta name="msvalidate.01" content="REPLACE_ME_BING_VERIFICATION" /> */}
@@ -95,27 +96,29 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           strategy="afterInteractive"
         /> */}
       </head>
-      <body className="min-h-screen flex flex-col bg-white text-gray-900">
-        <a
-          href="#main"
-          className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-white focus:text-brand-600 focus:font-semibold"
-        >
-          Skip to content
-        </a>
-        {GTM_ID && (
-          <noscript>
-            <iframe
-              src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
-              height="0"
-              width="0"
-              style={{ display: "none", visibility: "hidden" }}
-            />
-          </noscript>
-        )}
-        <Navbar />
-        <main id="main" className="flex-1">{children}</main>
-        <Footer />
-        <Analytics />
+      <body className="min-h-screen flex flex-col bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100">
+        <ThemeProvider attribute="class" defaultTheme="dark" disableTransitionOnChange>
+          <a
+            href="#main"
+            className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-white dark:focus:bg-gray-950 focus:text-brand-600 focus:font-semibold"
+          >
+            Skip to content
+          </a>
+          {GTM_ID && (
+            <noscript>
+              <iframe
+                src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+                height="0"
+                width="0"
+                style={{ display: "none", visibility: "hidden" }}
+              />
+            </noscript>
+          )}
+          <Navbar />
+          <main id="main" className="flex-1">{children}</main>
+          <Footer />
+          <Analytics />
+        </ThemeProvider>
       </body>
     </html>
   );

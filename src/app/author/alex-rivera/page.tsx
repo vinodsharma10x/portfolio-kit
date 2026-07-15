@@ -55,7 +55,7 @@ export default function AlexRiveraPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personLd) }}
       />
 
-      <section className="bg-gray-100 pt-20 sm:pt-28 pb-16 sm:pb-20">
+      <section className="bg-gray-100 dark:bg-gray-900 pt-20 sm:pt-28 pb-16 sm:pb-20">
         <div className="max-w-[720px] mx-auto px-4 sm:px-6">
           <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
             <img
@@ -66,7 +66,7 @@ export default function AlexRiveraPage() {
               className="w-28 h-28 rounded-full object-cover object-top shadow-md"
             />
             <div className="text-center sm:text-left">
-              <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">
+              <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-100 tracking-tight">
                 Alex Rivera
               </h1>
               <p className="text-brand-500 font-semibold mt-1">Product Builder &amp; Engineer</p>
@@ -74,7 +74,7 @@ export default function AlexRiveraPage() {
                 href="https://www.linkedin.com/in/yourhandle"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block mt-3 text-sm text-brand-500 hover:text-brand-600 font-medium"
+                className="inline-block mt-3 text-sm text-brand-500 hover:text-brand-600 dark:hover:text-brand-400 font-medium"
               >
                 LinkedIn →
               </a>
@@ -83,9 +83,9 @@ export default function AlexRiveraPage() {
         </div>
       </section>
 
-      <section className="bg-white py-12 sm:py-16">
+      <section className="bg-white dark:bg-gray-950 py-12 sm:py-16">
         <div className="max-w-[640px] mx-auto px-4 sm:px-6">
-          <div className="space-y-4 text-base text-gray-700 leading-relaxed">
+          <div className="space-y-4 text-base text-gray-700 dark:text-gray-300 leading-relaxed">
             <p>
               I&apos;m a product builder and engineer. I take ideas from rough sketch to shipped product, working across design, code, and everything in between.
             </p>
@@ -99,9 +99,9 @@ export default function AlexRiveraPage() {
         </div>
       </section>
 
-      <section className="bg-gray-50 py-12 sm:py-16">
+      <section className="bg-gray-50 dark:bg-gray-950 py-12 sm:py-16">
         <div className="max-w-[720px] mx-auto px-4 sm:px-6">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-8">
             Articles by Alex ({authorPosts.length})
           </h2>
           <div className="space-y-4">
@@ -109,13 +109,13 @@ export default function AlexRiveraPage() {
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="block bg-white rounded-xl p-5 border border-gray-100 hover:shadow-md transition-shadow"
+                className="block bg-white dark:bg-gray-900 rounded-xl p-5 border border-gray-100 dark:border-gray-800 hover:shadow-md transition-shadow"
               >
-                <h3 className="text-base font-bold text-gray-900 hover:text-brand-600 transition-colors">
+                <h3 className="text-base font-bold text-gray-900 dark:text-gray-100 hover:text-brand-600 transition-colors">
                   {post.title}
                 </h3>
-                <p className="text-sm text-gray-500 mt-1 line-clamp-2">{post.excerpt}</p>
-                <p className="text-xs text-gray-400 mt-2">{post.date} · {post.readingTime}</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400 mt-1 line-clamp-2">{post.excerpt}</p>
+                <p className="text-xs text-gray-400 dark:text-gray-500 mt-2">{post.date} · {post.readingTime}</p>
               </Link>
             ))}
           </div>

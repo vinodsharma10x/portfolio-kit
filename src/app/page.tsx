@@ -94,13 +94,13 @@ export default function Home() {
 
       {/* Blog links section for internal linking + SEO juice */}
       {recentPosts.length > 0 && (
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-gray-50 dark:bg-gray-950">
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <div className="text-center mb-10">
-              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-gray-100">
                 From the Blog
               </h2>
-              <p className="mt-2 text-gray-500">
+              <p className="mt-2 text-gray-500 dark:text-gray-400">
                 Notes on building and shipping products with code and no-code.
               </p>
             </div>
@@ -109,10 +109,10 @@ export default function Home() {
                 <Link
                   key={post.slug}
                   href={`/blog/${post.slug}`}
-                  className="group block bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300"
+                  className="group block bg-white dark:bg-gray-900 rounded-2xl overflow-hidden border border-gray-100 dark:border-gray-800 hover:shadow-lg transition-all duration-300"
                 >
                   {post.coverImage ? (
-                    <div className="aspect-video bg-gray-100 overflow-hidden">
+                    <div className="aspect-video bg-gray-100 dark:bg-gray-900 overflow-hidden">
                       <img
                         src={post.coverImage}
                         alt={post.title}
@@ -130,10 +130,10 @@ export default function Home() {
                         {post.tags[0]}
                       </span>
                     )}
-                    <h3 className="mt-1 text-base font-bold text-gray-900 group-hover:text-brand-600 transition-colors line-clamp-2">
+                    <h3 className="mt-1 text-base font-bold text-gray-900 dark:text-gray-100 group-hover:text-brand-600 transition-colors line-clamp-2">
                       {post.title}
                     </h3>
-                    <p className="mt-2 text-sm text-gray-500 line-clamp-2">
+                    <p className="mt-2 text-sm text-gray-500 dark:text-gray-400 line-clamp-2">
                       {post.excerpt}
                     </p>
                   </div>
@@ -143,7 +143,7 @@ export default function Home() {
             <div className="text-center mt-8">
               <Link
                 href="/blog"
-                className="inline-flex items-center gap-1 text-sm font-semibold text-brand-600 hover:text-brand-700 transition-colors"
+                className="inline-flex items-center gap-1 text-sm font-semibold text-brand-600 hover:text-brand-700 dark:hover:text-brand-400 transition-colors"
               >
                 View all articles &rarr;
               </Link>

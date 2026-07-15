@@ -85,23 +85,23 @@ export default function AboutPage() {
       />
 
       {/* Section 1: Hero */}
-      <section className="bg-gray-100 pt-20 sm:pt-28 pb-16 sm:pb-20">
+      <section className="bg-gray-100 dark:bg-gray-900 pt-20 sm:pt-28 pb-16 sm:pb-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 tracking-tight mb-4">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-gray-100 tracking-tight mb-4">
             About <span className="text-brand-500">Alex Rivera</span>
           </h1>
-          <p className="text-lg sm:text-xl text-gray-500 leading-relaxed">
+          <p className="text-lg sm:text-xl text-gray-500 dark:text-gray-400 leading-relaxed">
             Product builder shipping useful things with code and no-code.
           </p>
         </div>
       </section>
 
       {/* Section 2: The Story */}
-      <section className="bg-white py-16 sm:py-20">
+      <section className="bg-white dark:bg-gray-950 py-16 sm:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] gap-10 lg:gap-16 items-center">
             {/* Photo (same one as the homepage) */}
-            <div className="relative aspect-[4/5] max-w-sm w-full mx-auto lg:mx-0 rounded-2xl overflow-hidden bg-gray-100 shadow-sm">
+            <div className="relative aspect-[4/5] max-w-sm w-full mx-auto lg:mx-0 rounded-2xl overflow-hidden bg-gray-100 dark:bg-gray-900 shadow-sm">
               <img
                 src="/images/avatar.svg"
                 alt="Alex Rivera, Product Builder & Engineer"
@@ -111,10 +111,10 @@ export default function AboutPage() {
 
             {/* Story */}
             <div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-6">
                 Hi, I&apos;m Alex
               </h2>
-              <div className="space-y-4 text-base text-gray-700 leading-relaxed">
+              <div className="space-y-4 text-base text-gray-700 dark:text-gray-300 leading-relaxed">
                 <p>
                   I&apos;m a product builder and engineer. I take ideas from rough
                   sketch to shipped product, working across design, code, and
@@ -136,26 +136,26 @@ export default function AboutPage() {
       </section>
 
       {/* Section 3: Résumé — Experience, Skills, Education */}
-      <section className="bg-gray-50 py-16 sm:py-20">
+      <section className="bg-gray-50 dark:bg-gray-950 py-16 sm:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           {/* Experience */}
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-8">
             Experience
           </h2>
           <div className="space-y-8">
             {EXPERIENCE.map((job) => (
               <div
                 key={`${job.role}-${job.company}`}
-                className="border-l-2 border-brand-100 pl-5"
+                className="border-l-2 border-brand-100 dark:border-gray-800 pl-5"
               >
                 <div className="flex flex-wrap items-baseline justify-between gap-x-4">
-                  <h3 className="text-lg font-bold text-gray-900">{job.role}</h3>
-                  <span className="text-sm text-gray-400">{job.period}</span>
+                  <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100">{job.role}</h3>
+                  <span className="text-sm text-gray-400 dark:text-gray-500">{job.period}</span>
                 </div>
                 <p className="text-sm font-semibold text-brand-500 mb-1">
                   {job.company}
                 </p>
-                <p className="text-base text-gray-600 leading-relaxed">
+                <p className="text-base text-gray-600 dark:text-gray-400 leading-relaxed">
                   {job.blurb}
                 </p>
               </div>
@@ -163,7 +163,7 @@ export default function AboutPage() {
           </div>
 
           {/* Skills */}
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mt-14 mb-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-gray-100 mt-14 mb-8">
             Skills
           </h2>
           <div className="space-y-5">
@@ -172,14 +172,14 @@ export default function AboutPage() {
                 key={group.label}
                 className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4"
               >
-                <span className="w-28 shrink-0 text-sm font-semibold text-gray-900">
+                <span className="w-28 shrink-0 text-sm font-semibold text-gray-900 dark:text-gray-100">
                   {group.label}
                 </span>
                 <div className="flex flex-wrap gap-2">
                   {group.items.map((item) => (
                     <span
                       key={item}
-                      className="rounded-full bg-white border border-gray-200 px-3 py-1 text-sm text-gray-600"
+                      className="rounded-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 px-3 py-1 text-sm text-gray-600 dark:text-gray-400"
                     >
                       {item}
                     </span>
@@ -190,7 +190,7 @@ export default function AboutPage() {
           </div>
 
           {/* Education */}
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mt-14 mb-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-gray-100 mt-14 mb-8">
             Education
           </h2>
           <div className="space-y-4">
@@ -200,18 +200,18 @@ export default function AboutPage() {
                 className="flex flex-wrap items-baseline justify-between gap-x-4"
               >
                 <div>
-                  <h3 className="text-lg font-bold text-gray-900">{edu.degree}</h3>
+                  <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100">{edu.degree}</h3>
                   <p className="text-sm font-semibold text-brand-500">{edu.school}</p>
                 </div>
-                <span className="text-sm text-gray-400">{edu.period}</span>
+                <span className="text-sm text-gray-400 dark:text-gray-500">{edu.period}</span>
               </div>
             ))}
           </div>
 
           {/* Contact line */}
-          <p className="mt-14 text-base text-gray-600 leading-relaxed">
+          <p className="mt-14 text-base text-gray-600 dark:text-gray-400 leading-relaxed">
             The best way to start a conversation is to{" "}
-            <a href="mailto:hello@example.com" className="text-brand-500 hover:text-brand-600 font-medium">
+            <a href="mailto:hello@example.com" className="text-brand-500 hover:text-brand-600 dark:hover:text-brand-400 font-medium">
               send me an email
             </a>
             .

@@ -121,10 +121,10 @@ export default function BlogPage() {
       />
       {/* Server-rendered header - visible to crawlers before JS loads */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-12 sm:pt-16 pb-0 text-center">
-        <h1 className="text-3xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">
+        <h1 className="text-3xl sm:text-5xl font-extrabold text-gray-900 dark:text-gray-100 tracking-tight">
           The <span className="text-brand-500">Blog</span>
         </h1>
-        <p className="mt-4 text-base sm:text-lg text-gray-500 max-w-2xl mx-auto">
+        <p className="mt-4 text-base sm:text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
           Notes on building and shipping products with code and no-code.
         </p>
       </div>

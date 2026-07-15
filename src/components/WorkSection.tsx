@@ -10,14 +10,14 @@ const work = [
 
 export function WorkSection() {
   return (
-    <section id="work" className="py-24 sm:py-32 bg-white overflow-hidden scroll-mt-20">
+    <section id="work" className="py-24 sm:py-32 bg-white dark:bg-gray-950 overflow-hidden scroll-mt-20">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 text-center mb-6"
+          className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-gray-100 text-center mb-6"
         >
           Selected work
         </motion.h2>
@@ -27,7 +27,7 @@ export function WorkSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-center text-base sm:text-lg text-gray-500 max-w-2xl mx-auto mb-16"
+          className="text-center text-base sm:text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto mb-16"
         >
           A few projects I&apos;m proud of.
         </motion.p>
@@ -42,17 +42,17 @@ export function WorkSection() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: i * 0.08, ease: "easeOut" }}
               whileHover={{ y: -4 }}
-              className="block rounded-2xl bg-white border border-gray-100 shadow-sm p-6 transition-all duration-300 hover:shadow-lg hover:border-brand-200"
+              className="block rounded-2xl bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 shadow-sm p-6 transition-all duration-300 hover:shadow-lg hover:border-brand-200"
             >
               {item.tag && (
                 <span className="text-xs font-semibold tracking-wide uppercase text-brand-500">
                   {item.tag}
                 </span>
               )}
-              <h3 className="mt-2 text-lg font-bold text-gray-900">
+              <h3 className="mt-2 text-lg font-bold text-gray-900 dark:text-gray-100">
                 {item.title}
               </h3>
-              <p className="mt-2 text-sm text-gray-500 leading-relaxed">
+              <p className="mt-2 text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
                 {item.description}
               </p>
             </motion.a>

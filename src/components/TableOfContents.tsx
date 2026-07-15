@@ -59,7 +59,7 @@ export function TableOfContents({ html }: { html: string }) {
 
   return (
     <nav className="hidden lg:block sticky top-24 pt-8">
-      <h4 className="text-sm font-semibold text-gray-900 mb-3">
+      <h4 className="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-3">
         Table of Contents
       </h4>
       <ul className="space-y-2 text-sm">
@@ -73,7 +73,7 @@ export function TableOfContents({ html }: { html: string }) {
               className={`block transition-colors ${
                 activeId === heading.id
                   ? "text-brand-600 font-medium"
-                  : "text-gray-500 hover:text-gray-900"
+                  : "text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
               }`}
               onClick={(e) => {
                 e.preventDefault();

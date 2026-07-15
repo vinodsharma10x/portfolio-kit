@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-[70vh] flex items-center justify-center bg-white overflow-hidden">
+    <section className="relative min-h-[70vh] flex items-center justify-center bg-white dark:bg-gray-950 overflow-hidden">
       {/* Subtle grid background */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.03)_1px,transparent_1px)] bg-[size:64px_64px]" />
 
@@ -20,7 +20,7 @@ export function HeroSection() {
           <span className="block text-sm font-semibold tracking-widest text-brand-500 uppercase mb-6">
             Product Builder &amp; Engineer
           </span>
-          <span className="block text-4xl sm:text-5xl lg:text-7xl font-extrabold text-gray-900 leading-[1.15] tracking-tight">
+          <span className="block text-4xl sm:text-5xl lg:text-7xl font-extrabold text-gray-900 dark:text-gray-100 leading-[1.15] tracking-tight">
             I design and build
           </span>
           <span className="block text-4xl sm:text-5xl lg:text-7xl font-extrabold text-brand-500 leading-[1.15] tracking-tight">
@@ -32,7 +32,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-6 text-base sm:text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed"
+          className="mt-6 text-base sm:text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed"
         >
           From idea to launch - web apps, tools, and automations, built with code
           and no-code. Here&apos;s a selection of my work.
@@ -52,7 +52,7 @@ export function HeroSection() {
           </a>
           <a
             href="/about"
-            className="inline-flex items-center px-7 py-3.5 text-sm font-bold text-gray-700 bg-gray-100 hover:bg-gray-200 transition-colors rounded-full"
+            className="inline-flex items-center px-7 py-3.5 text-sm font-bold text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors rounded-full"
           >
             About me
           </a>

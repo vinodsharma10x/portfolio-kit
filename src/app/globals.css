@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Enable class-based dark mode (next-themes sets `.dark` on <html>). */
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 
@@ -173,3 +176,22 @@ img:not([class*="h-"]) {
   background-color: #f9fafb;
   font-weight: 600;
 }
+
+/* ===========================================================================
+   DARK MODE — prose overrides. Component chrome uses Tailwind `dark:` variants;
+   the rendered blog markdown uses these class overrides.
+   =========================================================================== */
+:where(.dark) .blog-content { color: #d1d5db; }
+:where(.dark) .blog-content h2 { color: #f9fafb; }
+:where(.dark) .blog-content h3 { color: #f3f4f6; }
+:where(.dark) .blog-content p,
+:where(.dark) .blog-content ul,
+:where(.dark) .blog-content ol { color: #d1d5db; }
+:where(.dark) .blog-content strong { color: #f9fafb; }
+:where(.dark) .blog-content a { color: var(--color-brand-400); }
+:where(.dark) .blog-content a:hover { color: var(--color-brand-200); }
+:where(.dark) .blog-content blockquote { color: #9ca3af; }
+:where(.dark) .blog-content code { background-color: #1f2937; color: #e5e7eb; }
+:where(.dark) .blog-content th { background-color: #111827; }
+:where(.dark) .blog-content th,
+:where(.dark) .blog-content td { border-color: #374151; }

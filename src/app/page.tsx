@@ -4,7 +4,6 @@ import { WhatWeDoSection } from "@/components/WhatWeDoSection";
 import { WorkSection } from "@/components/WorkSection";
 import { TeamSection } from "@/components/TeamSection";
 import { FaqSection } from "@/components/FaqSection";
-import { FinalCtaSection } from "@/components/FinalCtaSection";
 import { getFeaturedPosts } from "@/lib/mdx";
 import { faqs } from "@/lib/faq-data";
 import Link from "next/link";
@@ -152,8 +151,6 @@ export default function Home() {
           </div>
         </section>
       )}
-
-      <FinalCtaSection />
     </>
   );
 }

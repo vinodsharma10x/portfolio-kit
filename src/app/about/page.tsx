@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://example.com";
 
@@ -90,41 +89,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Section 3: Profile */}
-      <section className="bg-gray-100 py-16 sm:py-20">
-        <div className="max-w-[900px] mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 max-w-sm mx-auto gap-8">
-            <div className="bg-white rounded-2xl p-6 text-center shadow-sm">
-              <div className="w-40 h-40 mx-auto mb-4 rounded-2xl overflow-hidden bg-gray-200">
-                <Image
-                  src="/images/avatar.svg"
-                  alt="Alex Rivera, Product Builder & Engineer"
-                  width={160}
-                  height={160}
-                  className="w-full h-full object-cover object-top"
-                />
-              </div>
-              <h3 className="text-lg font-bold text-gray-900">Alex Rivera</h3>
-              <p className="text-sm text-brand-500 font-medium mb-3">
-                Product Builder &amp; Engineer
-              </p>
-              <p className="text-sm text-gray-500 leading-relaxed mb-4 min-h-[80px]">
-                Building products with code and no-code - from idea to launch.
-              </p>
-              <a
-                href="https://www.linkedin.com/in/yourhandle"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-brand-500 hover:text-brand-600 font-medium"
-              >
-                LinkedIn →
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 4: What I do */}
+      {/* Section 3: What I do */}
       <section className="bg-white py-16 sm:py-20">
         <div className="max-w-[640px] mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">

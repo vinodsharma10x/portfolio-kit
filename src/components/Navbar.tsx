@@ -8,7 +8,6 @@ const NAV = [
   { label: "About", href: "/about" },
   { label: "Blog", href: "/blog" },
 ];
-const CTA = { label: "Hire me", href: "mailto:hello@example.com" };
 
 export function Navbar() {
   return (
@@ -23,23 +22,17 @@ export function Navbar() {
           {BRAND_NAME}
         </Link>
 
-        {/* Nav links + primary CTA */}
+        {/* Nav links */}
         <div className="flex items-center gap-6">
           {NAV.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="hidden sm:inline text-sm font-semibold text-gray-500 hover:text-brand-600 transition-colors"
+              className="text-sm font-semibold text-gray-500 hover:text-brand-600 transition-colors"
             >
               {item.label}
             </Link>
           ))}
-          <a
-            href={CTA.href}
-            className="text-sm font-bold text-white bg-brand-500 hover:bg-brand-600 transition-colors rounded-full px-4 py-2"
-          >
-            {CTA.label}
-          </a>
         </div>
       </nav>
     </header>

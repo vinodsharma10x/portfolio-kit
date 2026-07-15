@@ -1,142 +1,98 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { motion } from "framer-motion";
+import Link from "next/link";
 
-const team = [
-  {
-    name: "Alex Rivera",
-    role: "Product Builder & Engineer",
-    image: "/images/avatar.svg",
-    linkedin: "https://www.linkedin.com/in/yourhandle",
-    bio: [
-      "I'm Alex - a product builder and engineer. I take ideas from rough sketch to shipped product, working across design, code, and everything in between.",
-      "I care about useful software, clear thinking, and shipping. I've worked on products spanning web apps, internal tools, and automation.",
-      "This is where I keep my work and occasional writing. If something resonates, get in touch.",
-    ],
-  },
-];
+// Edit these to make the section yours. The stats are placeholders — swap in
+// numbers that matter for you (years, projects, clients, a headline metric).
+const about = {
+  name: "Alex Rivera",
+  role: "Product Builder & Engineer",
+  image: "/images/avatar.svg",
+  linkedin: "https://www.linkedin.com/in/yourhandle",
+  bio: [
+    "I'm a product builder and engineer. I take ideas from rough sketch to shipped product, working across design, code, and everything in between.",
+    "I care about useful software, clear thinking, and shipping. I've worked on products spanning web apps, internal tools, and automation.",
+  ],
+  stats: [
+    { value: "10+", label: "Products shipped" },
+    { value: "Full-stack", label: "Design to deploy" },
+    { value: "Open", label: "To new work" },
+  ],
+};
 
 export function TeamSection() {
-  const [openBio, setOpenBio] = useState<string | null>(null);
-  const activeMember = team.find((m) => m.name === openBio);
-
   return (
-    <>
-      <section className="py-24 sm:py-32 bg-white overflow-hidden">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
+    <section id="about" className="py-24 sm:py-32 bg-white overflow-hidden">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] gap-12 lg:gap-16 items-center">
+          {/* Photo */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 text-center mb-16"
+            className="relative aspect-[4/5] max-w-sm w-full mx-auto lg:mx-0 rounded-2xl overflow-hidden bg-gray-100 shadow-sm"
           >
-            About me
-          </motion.h2>
+            <img
+              src={about.image}
+              alt={`${about.name}, ${about.role}`}
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          </motion.div>
 
-          <div className="grid grid-cols-1 max-w-sm mx-auto gap-6">
-            {team.map((member, i) => (
-              <motion.div
-                key={member.name}
-                initial={{ opacity: 0, y: 40, scale: 0.95 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.15 }}
-                whileHover={{ y: -6 }}
-                onClick={() => setOpenBio(member.name)}
-                className="group relative aspect-[3/4] rounded-2xl overflow-hidden bg-gray-100 shadow-sm transition-shadow duration-300 hover:shadow-xl cursor-pointer"
-              >
-                {/* Photo */}
-                <img
-                  src={member.image}
-                  alt={`${member.name}, ${member.role}`}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-
-                {/* Bottom gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-
-                {/* Name + role */}
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <p className="text-white text-xl font-bold">{member.name}</p>
-                  <p className="text-white/70 text-sm font-medium">
-                    {member.role}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
+          {/* Copy */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-12 text-center text-lg text-gray-500 italic"
+            transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Product builder shipping useful things with code and no-code.
-          </motion.p>
-        </div>
-      </section>
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-500 mb-4">
+              About me
+            </p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 tracking-tight mb-6">
+              Hi, I&apos;m {about.name.split(" ")[0]}.
+            </h2>
 
-      {/* Small modal card popup */}
-      <AnimatePresence>
-        {openBio && activeMember && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-50 bg-black/40 flex items-center justify-center p-4"
-            onClick={() => setOpenBio(null)}
-          >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              transition={{ duration: 0.3 }}
-              className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-10 sm:p-12 relative"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <button
-                onClick={() => setOpenBio(null)}
-                className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-xl font-bold leading-none"
-              >
-                &times;
-              </button>
-              <img
-                src={activeMember.image}
-                alt={`${activeMember.name}, ${activeMember.role}`}
-                className="w-20 h-20 rounded-full object-cover mx-auto mb-6 shadow-md"
-              />
-              <h3 className="text-xl font-bold text-gray-900 text-center mb-1">
-                {activeMember.name}
-              </h3>
-              <p className="text-brand-500 font-semibold text-xs uppercase tracking-wider text-center mb-8">
-                {activeMember.role}
-              </p>
-              <div className="space-y-4 text-gray-600 text-sm leading-loose text-left">
-                {activeMember.bio.map((paragraph, i) => (
-                  <p key={i}>{paragraph}</p>
-                ))}
-              </div>
-              {activeMember.linkedin && (
-                <div className="mt-6 text-center">
-                  <a
-                    href={activeMember.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-brand-500 hover:text-brand-600 font-medium"
-                  >
-                    LinkedIn →
-                  </a>
+            <div className="space-y-4 text-lg text-gray-600 leading-relaxed">
+              {about.bio.map((paragraph, i) => (
+                <p key={i}>{paragraph}</p>
+              ))}
+            </div>
+
+            {/* Stats */}
+            <div className="mt-8 grid grid-cols-3 gap-6 max-w-md">
+              {about.stats.map((stat) => (
+                <div key={stat.label}>
+                  <p className="text-2xl font-bold text-brand-500">{stat.value}</p>
+                  <p className="text-xs text-gray-500 mt-1">{stat.label}</p>
                 </div>
+              ))}
+            </div>
+
+            {/* Links */}
+            <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3">
+              <Link
+                href="/about"
+                className="inline-flex items-center gap-1 text-sm font-bold text-brand-600 hover:text-brand-700 transition-colors"
+              >
+                Read my full story &rarr;
+              </Link>
+              {about.linkedin && (
+                <a
+                  href={about.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-sm font-semibold text-gray-500 hover:text-gray-800 transition-colors"
+                >
+                  LinkedIn &rarr;
+                </a>
               )}
-            </motion.div>
+            </div>
           </motion.div>
-        )}
-      </AnimatePresence>
-    </>
+        </div>
+      </div>
+    </section>
   );
 }

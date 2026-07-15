@@ -45,16 +45,16 @@ export function HeroSection() {
           className="mt-10 flex items-center justify-center gap-4"
         >
           <a
-            href="mailto:hello@example.com"
+            href="/#work"
             className="inline-flex items-center px-7 py-3.5 text-sm font-bold text-white bg-accent-500 hover:bg-accent-600 transition-colors rounded-full"
           >
-            Hire me
+            View work
           </a>
           <a
-            href="/#work"
+            href="/about"
             className="inline-flex items-center px-7 py-3.5 text-sm font-bold text-gray-700 bg-gray-100 hover:bg-gray-200 transition-colors rounded-full"
           >
-            View work
+            About me
           </a>
         </motion.div>
       </div>

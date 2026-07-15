@@ -2,6 +2,38 @@ import type { Metadata } from "next";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://example.com";
 
+// Your résumé — edit these three arrays to make the About page yours.
+const EXPERIENCE = [
+  {
+    role: "Senior Product Engineer",
+    company: "Independent",
+    period: "2022 — Present",
+    blurb: "Building web apps and internal tools for startups, from first sketch to production.",
+  },
+  {
+    role: "Full-Stack Developer",
+    company: "Acme Labs",
+    period: "2019 — 2022",
+    blurb: "Shipped customer-facing features across the stack and mentored two junior engineers.",
+  },
+  {
+    role: "Frontend Developer",
+    company: "Startup Co.",
+    period: "2017 — 2019",
+    blurb: "Built the design system and rebuilt the marketing site, cutting load time by 40%.",
+  },
+];
+
+const SKILL_GROUPS = [
+  { label: "Languages", items: ["TypeScript", "JavaScript", "Python", "SQL"] },
+  { label: "Frameworks", items: ["React", "Next.js", "Node.js", "Tailwind CSS"] },
+  { label: "Tools", items: ["Git", "Figma", "Vercel", "Postgres"] },
+];
+
+const EDUCATION = [
+  { degree: "B.S. Computer Science", school: "State University", period: "2013 — 2017" },
+];
+
 export const metadata: Metadata = {
   title: "About | Alex Rivera",
   description:
@@ -103,30 +135,87 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Section 3: What I do */}
-      <section className="bg-white py-16 sm:py-20">
-        <div className="max-w-[640px] mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
-            What I do
+      {/* Section 3: Résumé — Experience, Skills, Education */}
+      <section className="bg-gray-50 py-16 sm:py-20">
+        <div className="max-w-[720px] mx-auto px-4 sm:px-6">
+          {/* Experience */}
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8">
+            Experience
           </h2>
-          <div className="space-y-4 text-base text-gray-700 leading-relaxed text-left">
-            <p>
-              I help take products from idea to shipped - product thinking,
-              full-stack engineering, no-code and automation, and the design sense
-              to make it all clear and usable.
-            </p>
-            <p>
-              I work solo or embedded in a team, with clear communication and
-              dependable delivery.
-            </p>
-            <p>
-              The best way to start a conversation is to{" "}
-              <a href="mailto:hello@example.com" className="text-brand-500 hover:text-brand-600">
-                send me an email
-              </a>
-              .
-            </p>
+          <div className="space-y-8">
+            {EXPERIENCE.map((job) => (
+              <div
+                key={`${job.role}-${job.company}`}
+                className="border-l-2 border-brand-100 pl-5"
+              >
+                <div className="flex flex-wrap items-baseline justify-between gap-x-4">
+                  <h3 className="text-lg font-bold text-gray-900">{job.role}</h3>
+                  <span className="text-sm text-gray-400">{job.period}</span>
+                </div>
+                <p className="text-sm font-semibold text-brand-500 mb-1">
+                  {job.company}
+                </p>
+                <p className="text-base text-gray-600 leading-relaxed">
+                  {job.blurb}
+                </p>
+              </div>
+            ))}
           </div>
+
+          {/* Skills */}
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mt-14 mb-8">
+            Skills
+          </h2>
+          <div className="space-y-5">
+            {SKILL_GROUPS.map((group) => (
+              <div
+                key={group.label}
+                className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4"
+              >
+                <span className="w-28 shrink-0 text-sm font-semibold text-gray-900">
+                  {group.label}
+                </span>
+                <div className="flex flex-wrap gap-2">
+                  {group.items.map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-full bg-white border border-gray-200 px-3 py-1 text-sm text-gray-600"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Education */}
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mt-14 mb-8">
+            Education
+          </h2>
+          <div className="space-y-4">
+            {EDUCATION.map((edu) => (
+              <div
+                key={edu.degree}
+                className="flex flex-wrap items-baseline justify-between gap-x-4"
+              >
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">{edu.degree}</h3>
+                  <p className="text-sm font-semibold text-brand-500">{edu.school}</p>
+                </div>
+                <span className="text-sm text-gray-400">{edu.period}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* Contact line */}
+          <p className="mt-14 text-base text-gray-600 leading-relaxed">
+            The best way to start a conversation is to{" "}
+            <a href="mailto:hello@example.com" className="text-brand-500 hover:text-brand-600 font-medium">
+              send me an email
+            </a>
+            .
+          </p>
         </div>
       </section>
     </>

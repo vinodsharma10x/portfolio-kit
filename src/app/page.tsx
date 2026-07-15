@@ -4,7 +4,7 @@ import { WhatWeDoSection } from "@/components/WhatWeDoSection";
 import { WorkSection } from "@/components/WorkSection";
 import { TeamSection } from "@/components/TeamSection";
 import { FaqSection } from "@/components/FaqSection";
-import { getFeaturedPosts } from "@/lib/mdx";
+import { getRecentPosts } from "@/lib/mdx";
 import { faqs } from "@/lib/faq-data";
 import Link from "next/link";
 
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  const recentPosts = getFeaturedPosts();
+  const recentPosts = getRecentPosts();
 
   const personLd = {
     "@context": "https://schema.org",

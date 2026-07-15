@@ -66,25 +66,39 @@ export default function AboutPage() {
 
       {/* Section 2: The Story */}
       <section className="bg-white py-16 sm:py-20">
-        <div className="max-w-[640px] mx-auto px-4 sm:px-6">
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
-            Hi, I&apos;m Alex
-          </h2>
-          <div className="space-y-4 text-base text-gray-700 leading-relaxed">
-            <p>
-              I&apos;m a product builder and engineer. I take ideas from rough
-              sketch to shipped product, working across design, code, and
-              everything in between.
-            </p>
-            <p>
-              I care about useful software, clear thinking, and shipping. I&apos;ve
-              worked on products spanning web apps, internal tools, and
-              automation.
-            </p>
-            <p>
-              This is where I keep my work and occasional writing. If something
-              resonates, get in touch.
-            </p>
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] gap-10 lg:gap-16 items-center">
+            {/* Photo (same one as the homepage) */}
+            <div className="relative aspect-[4/5] max-w-sm w-full mx-auto lg:mx-0 rounded-2xl overflow-hidden bg-gray-100 shadow-sm">
+              <img
+                src="/images/avatar.svg"
+                alt="Alex Rivera, Product Builder & Engineer"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            </div>
+
+            {/* Story */}
+            <div>
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
+                Hi, I&apos;m Alex
+              </h2>
+              <div className="space-y-4 text-base text-gray-700 leading-relaxed">
+                <p>
+                  I&apos;m a product builder and engineer. I take ideas from rough
+                  sketch to shipped product, working across design, code, and
+                  everything in between.
+                </p>
+                <p>
+                  I care about useful software, clear thinking, and shipping. I&apos;ve
+                  worked on products spanning web apps, internal tools, and
+                  automation.
+                </p>
+                <p>
+                  This is where I keep my work and occasional writing. If something
+                  resonates, get in touch.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

@@ -144,9 +144,8 @@ export function getPostsByCategory(category: string): BlogPostMeta[] {
   );
 }
 
-export function getFeaturedPosts(): BlogPostMeta[] {
-  const posts = getAllPostsMeta();
-  const featured = posts.filter((p) => p.featured);
-  if (featured.length > 0) return featured.slice(0, 6);
-  return posts.slice(0, 6);
+// The most recent posts by date (newest first). Used for the homepage
+// "From the Blog" section. getAllPostsMeta already sorts by date desc.
+export function getRecentPosts(limit = 6): BlogPostMeta[] {
+  return getAllPostsMeta().slice(0, limit);
 }

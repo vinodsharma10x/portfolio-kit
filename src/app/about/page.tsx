@@ -86,7 +86,7 @@ export default function AboutPage() {
 
       {/* Section 1: Hero */}
       <section className="bg-gray-100 pt-20 sm:pt-28 pb-16 sm:pb-20">
-        <div className="max-w-[720px] mx-auto px-4 sm:px-6 text-center">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 tracking-tight mb-4">
             About <span className="text-brand-500">Alex Rivera</span>
           </h1>
@@ -137,7 +137,7 @@ export default function AboutPage() {
 
       {/* Section 3: Résumé — Experience, Skills, Education */}
       <section className="bg-gray-50 py-16 sm:py-20">
-        <div className="max-w-[720px] mx-auto px-4 sm:px-6">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
           {/* Experience */}
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8">
             Experience

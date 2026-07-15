@@ -28,20 +28,21 @@ export function Footer() {
 
   return (
     <footer className="border-t border-gray-200 bg-gray-50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8 flex flex-wrap items-center justify-between gap-x-4 gap-y-4">
-        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-gray-400">
-          <Link
-            href="/"
-            aria-label={`${BRAND_NAME} home`}
-            className="text-base font-extrabold tracking-tight text-gray-900"
-          >
-            {BRAND_NAME}.
-          </Link>
-          <span className="text-gray-300">|</span>
-          <Link href="/privacy" className="hover:text-gray-600 transition-colors">Privacy</Link>
-          <span className="text-gray-300">|</span>
-          <Link href="/terms" className="hover:text-gray-600 transition-colors">Terms &amp; Conditions</Link>
-          <span className="text-gray-300">|</span>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8 flex flex-wrap items-start justify-between gap-x-4 gap-y-4">
+        <div className="flex flex-col gap-2 text-sm text-gray-400">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+            <Link
+              href="/"
+              aria-label={`${BRAND_NAME} home`}
+              className="text-base font-extrabold tracking-tight text-gray-900"
+            >
+              {BRAND_NAME}.
+            </Link>
+            <span className="text-gray-300">|</span>
+            <Link href="/privacy" className="hover:text-gray-600 transition-colors">Privacy</Link>
+            <span className="text-gray-300">|</span>
+            <Link href="/terms" className="hover:text-gray-600 transition-colors">Terms &amp; Conditions</Link>
+          </div>
           <span>
             &copy; {year} {BRAND_NAME} &middot; Built with{" "}
             <a
